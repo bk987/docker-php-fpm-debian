@@ -11,8 +11,10 @@ RUN apt-get update \
    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN pecl install memcached && \
+	pecl install redis && \
    docker-php-source extract && \
    docker-php-ext-enable memcached && \
+   docker-php-ext-enable redis && \
    docker-php-ext-configure intl && \
    docker-php-ext-configure gd --with-freetype --with-jpeg && \
    docker-php-ext-install -j$(nproc) gd pdo_mysql zip intl exif pcntl bcmath && \
