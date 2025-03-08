@@ -7,7 +7,7 @@ RUN apt-get update \
    build-essential apt-utils libfreetype6-dev libjpeg62-turbo-dev \
    libmemcached-dev zlib1g-dev libssl-dev libmcrypt-dev libpng-dev libxml2-dev \
    libzip-dev libz-dev libicu-dev locales jpegoptim optipng pngquant gifsicle \
-   zip unzip git curl mariadb-client \
+   zip unzip git curl mariadb-client supervisor \
    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN pecl install memcached && \
